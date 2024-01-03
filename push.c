@@ -45,7 +45,7 @@ int is_integer(const char *arg)
 {
 	if (arg == NULL)
 		return (0);
-	if (*arg == '-' || *arg == '+') 
+	if (*arg == '-' || *arg == '+')
 		arg++;
 	while (*arg)
 	{
