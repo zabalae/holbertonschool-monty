@@ -32,7 +32,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Function prototypes */
-void push(stack_t **stack, unsigned int line_number, int n);
+void push(stack_t **stack, unsigned int line_number, const char *arg);
 void pall(stack_t **stack, unsigned int line_number);
 int is_integer(const char *arg);
 
