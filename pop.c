@@ -3,7 +3,7 @@
 /**
  * pop - removes the top element of the stack
  * @stack: pointer to linked list stack
- * @line number: file's line number
+ * @line_number: file's line number
  * Return: void
  */
 
