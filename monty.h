@@ -31,4 +31,9 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Function prototypes */
+void push(stack_t **stack, unsigned int line_number, const char *arg);
+void pall(stack_t **stack, unsigned int line_number);
+int is_integer(const char *arg);
+
 #endif
