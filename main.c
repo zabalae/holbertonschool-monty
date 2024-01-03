@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 		opcode = strtok(line, " \n\t");
 		arg = strtok(NULL, " \n\t");
 		if (opcode)
-			execute_opcode(opcode, &stack, line_number, arg);
+			exe(opcode, &stack, line_number, arg);
 	}
 	fclose(file);
 	free(line);
