@@ -9,7 +9,7 @@
  * Return: void
  */
 
-void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number, char *arg)
+void exe(char *opcode, stack_t **stack, unsigned int line_number, char *arg)
 {
 	if (strcmp(opcode, "push") == 0)
 	{
@@ -65,6 +65,7 @@ int main(int argc, char **argv)
 	{
 		char *opcode;
 		char *arg;
+
 		line_number++;
 		opcode = strtok(line, " \n\t");
 		arg = strtok(NULL, " \n\t");
@@ -73,9 +74,11 @@ int main(int argc, char **argv)
 	}
 	fclose(file);
 	free(line);
+
 	while (stack != NULL)
 	{
 		stack_t *temp = stack;
+
 		stack = stack->next;
 		free(temp);
 	}
