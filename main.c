@@ -31,6 +31,8 @@ void exe(char *opcode, stack_t **stack, unsigned int line_number, char *arg)
 	{
 		swap(stack, line_number);
 	}
+	else if (strcmp(opcode, "add") == 0)
+		add(stack, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
