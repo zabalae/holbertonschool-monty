@@ -4,7 +4,6 @@
  * swap - swaps the top two elements of the stack
  * @stack: pointer to linked list stack
  * @line_number: file's line number
- * @Return: void
  */
 
 void swap(stack_t **stack, unsigned int line_number)
