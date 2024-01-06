@@ -4,7 +4,7 @@
  * push - pushes an element to the stack
  * @stack: pointer to the linked list stack
  * @line_number: file's line number
- * @arg: ....
+ * @arg: The value to be pushed to the stack.
  * Return: void
  */
 

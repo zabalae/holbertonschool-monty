@@ -1,34 +1,28 @@
 #include "monty.h"
 
 /**
- * swap - swaps the top two elements of the stack
- * @stack: pointer to linked list stack
- * @line_number: file's line number
+ * swap - Swaps the top two elements of the stack
+ * @stack: Double pointer to the top of the stack
+ * @line_number: Line number in the file where the swap command is
+ *
+ *
+ *
+ *
  */
-
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top = *stack;
-	stack_t *next_element;
+	stack_t *temp;
 
-	if (top == NULL || top->next == NULL)
-	{
-		fprintf(stderr, "L%d: cant't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+{
+	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}
 
-	if (top && top->next)
-	{
-		next_element = top->next;
-		if (next_element->next)
-		{
-			next_element->next->prev = top;
-		}
-
-		top->next = next_element->next;
-		next_element->prev = NULL;
-		next_element->next = top;
-		top->prev = next_element;
-		*stack = next_element;
-	}
+	temp = (*stack)->next;
+	(*stack)->next = temp->next;
+	(*stack)->prev = temp;
+	temp->next = *stack;
+	temp->prev = NULL;
+	*stack = temp;
 }

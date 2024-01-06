@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * exe - ...
- * @opcode: ...
- * @stack: ...
- * @line_number: ...
- * @arg: ...
+ * exe - Executes the opcode functions.
+ * @opcode: The opcode to execute.
+ * @stack: Double pointer to the top of the stack.
+ * @line_number: Line number in the file where the opcode is.
+ * @arg: Argument for the opcode.
  * Return: void
  */
 
@@ -27,6 +27,10 @@ void exe(char *opcode, stack_t **stack, unsigned int line_number, char *arg)
 	{
 		pop(stack, line_number);
 	}
+	else if (strcmp(opcode, "nop") == 0)
+	{
+		nop(stack, line_number);
+	}
 	else if (strcmp(opcode, "swap") == 0)
 	{
 		swap(stack, line_number);
@@ -41,10 +45,10 @@ void exe(char *opcode, stack_t **stack, unsigned int line_number, char *arg)
 }
 
 /**
- * main - ...
- * @argc: ...
- * @argv: ...
- * Return: 0
+ * main - Entry point for the Bytecode interpreter.
+ * @argc: Number of arguments passed to the program
+ * @argv: Array of arguments passed to the program
+ * Return: 0 on success, EXIT_FAILURE on failure.
  */
 
 int main(int argc, char **argv)
